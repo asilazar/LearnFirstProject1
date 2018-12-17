@@ -2,6 +2,12 @@ import numpy as np
 
 
 def split_data_train_test(p, image_features):
+    """
+    this function will split the data to test and train according to the params.
+    :param p: params
+    :param image_features: image feature array to be splited.
+    :return: train x, train y, test x test y arrays
+    """
     x_train = []
     y_train = []
     x_test = []
@@ -20,8 +26,4 @@ def split_data_train_test(p, image_features):
             y_test.append(i)
             x_test.append(image_features[i][j])
 
-    train_x_array = np.asarray(x_train)
-    train_y_array = np.asarray(y_train)
-    test_x_array = np.asarray(x_test)
-    test_y_array = np.asarray(y_test)
-    return train_x_array, train_y_array, test_x_array, test_y_array
+    return x_train, y_train, x_test, y_test
